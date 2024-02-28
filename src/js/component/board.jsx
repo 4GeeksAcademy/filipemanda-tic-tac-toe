@@ -25,20 +25,20 @@ const Board = () => {
                     
                     
                     <div className="row"  >
-                        <div className="col d-flex justify-content-center border-bottom border-end border-5">1</div>
-                        <div className="col d-flex justify-content-center border-bottom border-end border-5">2</div>
-                        <div className="col d-flex justify-content-center border-bottom border-5">3</div>
+                        <div className="col d-flex justify-content-center border-bottom border-end border-5"><i className="far fa-circle"></i></div>
+                        <div className="col d-flex justify-content-center border-bottom border-end border-5"><i className="fas fa-times"></i></div>
+                        <div className="col d-flex justify-content-center border-bottom border-5"><i className="fas fa-times"></i></div>
 
                     </div>
                     <div className="row">
-                        <div className="col d-flex justify-content-center border-bottom border-end border-5">4</div>
-                        <div className="col d-flex justify-content-center border-bottom border-end border-5">5</div>
-                        <div className="col d-flex justify-content-center border-bottom border-5">6</div>
+                        <div className="col d-flex justify-content-center border-bottom border-end border-5"><i className="fas fa-times"></i></div>
+                        <div className="col d-flex justify-content-center border-bottom border-end border-5"><i className="far fa-circle"></i></div>
+                        <div className="col d-flex justify-content-center border-bottom border-5"><i className="far fa-circle"></i></div>
                     </div>
                     <div className="row">
-                        <div className="col d-flex justify-content-center  border-end border-5">7</div>
-                        <div className="col d-flex justify-content-center  border-end border-5">8</div>
-                        <div className="col d-flex justify-content-center   border-5">9</div>
+                        <div className="col d-flex justify-content-center border-end border-5"><i className="far fa-circle"></i></div>
+                        <div className="col d-flex justify-content-center border-end border-5"><i className="far fa-circle"></i></div>
+                        <div className="col d-flex justify-content-center border-5"><i className="fas fa-times"></i></div>
                     </div>
                 </div>
 
