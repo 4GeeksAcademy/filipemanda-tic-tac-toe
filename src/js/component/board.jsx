@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 
 //create your first component
 const Board = () => {
+    
+    const [squareValues, setSquareValues] = useState(["","","","","","","","",""]);
     return (
         <>
             <div className="container-fluid ">
@@ -25,7 +27,7 @@ const Board = () => {
                     
                     
                     <div className="row"  >
-                        <div className="col d-flex justify-content-center border-bottom border-end border-5"><i className="far fa-circle"></i></div>
+                        <div className="col d-flex justify-content-center border-bottom border-end border-5"><i className="fas fa-times" onClick={(setPlayer(player[0]))}></i></div>
                         <div className="col d-flex justify-content-center border-bottom border-end border-5"><i className="fas fa-times"></i></div>
                         <div className="col d-flex justify-content-center border-bottom border-5"><i className="fas fa-times"></i></div>
 
