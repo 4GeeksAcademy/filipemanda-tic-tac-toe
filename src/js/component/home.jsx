@@ -1,12 +1,14 @@
 import React from "react";
+import Board from "./board";
 
 
 
 //create your first component
 const Home = () => {
 	return (
-		<div className="text-center">
-		</div>
+		<>
+		<Board />
+		</>
 	);
 };
 
