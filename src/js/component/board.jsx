@@ -44,13 +44,7 @@ const Board = () => {
         setSquareValues(["", "", "", "", "", "", "", "", ""]);
         setWinner("");
     }
-
-
-
-
-    const handleClick = (num) => {
-
-
+    const switchTurn = (num) =>{
         if (squareValues[num] !== "") return;
         let arr = [...squareValues]
         if (turn === "X") {
@@ -61,9 +55,13 @@ const Board = () => {
             setTurn("X")
         }
         setSquareValues(arr);
+        return arr;
+    }
 
-        checkWinner(arr);
 
+    const handleClick = (num) => {
+
+        checkWinner(switchTurn(num));
 
     }
     const handleWinner = (winner) => {
