@@ -1,5 +1,6 @@
 import React from "react";
 import Board from "./board";
+import Homepage from "./homepage";
 
 
 
@@ -7,6 +8,7 @@ import Board from "./board";
 const Home = () => {
 	return (
 		<>
+		<Homepage />
 		<Board />
 		</>
 	);

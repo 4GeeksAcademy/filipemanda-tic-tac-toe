@@ -10,6 +10,7 @@ const Board = () => {
     const [turn, setTurn] = useState("X")
     const [squareValues, setSquareValues] = useState(["", "", "", "", "", "", "", "", ""]);
     const [winner, setWinner] = useState("");
+    const [playerName, setPlayerName] = useState("")
 
     const checkWinner = (gameArray) => {
         let possibleCombinations = [
