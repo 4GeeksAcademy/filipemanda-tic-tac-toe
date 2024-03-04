@@ -1,5 +1,6 @@
 import { element } from "prop-types";
 import React, { useState } from "react";
+import ChoosePlayer from "./homepage";
 
 
 
@@ -7,7 +8,7 @@ import React, { useState } from "react";
 const Board = () => {
 
 
-    const [turn, setTurn] = useState("X")
+    const [turn, setTurn] = useState("")
     const [squareValues, setSquareValues] = useState(["", "", "", "", "", "", "", "", ""]);
     const [winner, setWinner] = useState("");
     const [playerName, setPlayerName] = useState("")
@@ -45,7 +46,7 @@ const Board = () => {
         setSquareValues(["", "", "", "", "", "", "", "", ""]);
         setWinner("");
     }
-    const switchTurn = (num) =>{
+    const switchTurn = (num) => {
         if (squareValues[num] !== "") return;
         let arr = [...squareValues]
         if (turn === "X") {
@@ -72,8 +73,23 @@ const Board = () => {
 
     return (
         <>
+
+            <div className="row fs-2 text text-center d-flex justify-content-center">
+                <div className="col">
+                    <h1>Pick Your Player</h1>
+                </div>
+            </div>
+
+            <div className="row fs-2 text text-center d-flex justify-content-center">
+                <div className="col">
+                    <button type="button" className="btn btn-outline-light m-2" onClick={(e) => setTurn("X")}><i className="fas fa-times timesintro"></i></button>
+                    <button type="button" className="btn btn-outline-light m-2" onClick={(e) => setTurn("0")}><i className="far fa-circle circleintro"></i></button>
+                </div>
+            </div>
+
+
             <div className="container-fluid ">
-                <div className="anouncement">
+                <div className="anouncement text-danger">
                     {
                         winner ? <h1>Game over! The Winner is: {winner == "X" ? "X" : "0"}</h1> : null
                     }
@@ -96,26 +112,28 @@ const Board = () => {
 
 
 
-                <div className="row"  >
-                    <div className="col w-25 h-25 d-flex justify-content-center border-bottom border-end border-5" onClick={(e) => handleClick("0")} ><i className={`${squareValues[0] === 'X' ? 'fas fa-times' : squareValues[0] === '0' ? 'far fa-circle' : ''}`}></i>.</div>
-                    <div className="col d-flex justify-content-center border-bottom border-end border-5" onClick={(e) => handleClick("1")}><i className={`${squareValues[1] === 'X' ? 'fas fa-times' : squareValues[1] === '0' ? 'far fa-circle' : ''}`}></i>.</div>
-                    <div className="col d-flex justify-content-center border-bottom border-5" onClick={(e) => handleClick("2")}><i className={`${squareValues[2] === 'X' ? 'fas fa-times' : squareValues[2] === '0' ? 'far fa-circle' : ''}`}></i>.</div>
+                <div className="row m-5">
+                    <div className="row"  >
+                        <div className="col d-flex justify-content-center square border-top-0" onClick={(e) => handleClick("0")} ><i className={`${squareValues[0] === 'X' ? 'fas fa-times' : squareValues[0] === '0' ? 'far fa-circle' : ''}`}></i></div>
+                        <div className="col d-flex justify-content-center square border-top-0" onClick={(e) => handleClick("1")}><i className={`${squareValues[1] === 'X' ? 'fas fa-times' : squareValues[1] === '0' ? 'far fa-circle' : ''}`}></i></div>
+                        <div className="col d-flex justify-content-center square border-top-0 border-end-0" onClick={(e) => handleClick("2")}><i className={`${squareValues[2] === 'X' ? 'fas fa-times' : squareValues[2] === '0' ? 'far fa-circle' : ''}`}></i></div>
 
-                </div>
-                <div className="row"  >
-                    <div className="col d-flex justify-content-center border-bottom border-end border-5" onClick={(e) => handleClick("3")} ><i className={`${squareValues[3] === 'X' ? 'fas fa-times' : squareValues[3] === '0' ? 'far fa-circle' : ''}`}></i>.</div>
-                    <div className="col d-flex justify-content-center border-bottom border-end border-5" onClick={(e) => handleClick("4")}><i className={`${squareValues[4] === 'X' ? 'fas fa-times' : squareValues[4] === '0' ? 'far fa-circle' : ''}`}></i>.</div>
-                    <div className="col d-flex justify-content-center border-bottom border-5" onClick={(e) => handleClick("5")}><i className={`${squareValues[5] === 'X' ? 'fas fa-times' : squareValues[5] === '0' ? 'far fa-circle' : ''}`}></i>.</div>
+                    </div>
+                    <div className="row"  >
+                        <div className="col d-flex justify-content-center square" onClick={(e) => handleClick("3")} ><i className={`${squareValues[3] === 'X' ? 'fas fa-times' : squareValues[3] === '0' ? 'far fa-circle' : ''}`}></i></div>
+                        <div className="col d-flex justify-content-center square" onClick={(e) => handleClick("4")}><i className={`${squareValues[4] === 'X' ? 'fas fa-times' : squareValues[4] === '0' ? 'far fa-circle' : ''}`}></i></div>
+                        <div className="col d-flex justify-content-center square border-end-0" onClick={(e) => handleClick("5")}><i className={`${squareValues[5] === 'X' ? 'fas fa-times' : squareValues[5] === '0' ? 'far fa-circle' : ''}`}></i></div>
 
-                </div>
-                <div className="row"  >
-                    <div className="col d-flex justify-content-center border-end border-5" onClick={(e) => handleClick("6")} ><i className={`${squareValues[6] === 'X' ? 'fas fa-times' : squareValues[6] === '0' ? 'far fa-circle' : ''}`}></i>.</div>
-                    <div className="col d-flex justify-content-center border-end border-5" onClick={(e) => handleClick("7")}><i className={`${squareValues[7] === 'X' ? 'fas fa-times' : squareValues[7] === '0' ? 'far fa-circle' : ''}`}></i>.</div>
-                    <div className="col d-flex justify-content-center border-5" onClick={(e) => handleClick("8")}><i className={`${squareValues[8] === 'X' ? 'fas fa-times' : squareValues[8] === '0' ? 'far fa-circle' : ''}`}></i>.</div>
-                </div>
-                <div className="row">
-                    <div className="col d-flex justify-content-center mt-2">
-                        <button onClick={()=>{resetButton()}}>Reset</button>
+                    </div>
+                    <div className="row"  >
+                        <div className="col d-flex justify-content-center square" onClick={(e) => handleClick("6")} ><i className={`${squareValues[6] === 'X' ? 'fas fa-times' : squareValues[6] === '0' ? 'far fa-circle' : ''}`}></i></div>
+                        <div className="col d-flex justify-content-center square" onClick={(e) => handleClick("7")}><i className={`${squareValues[7] === 'X' ? 'fas fa-times' : squareValues[7] === '0' ? 'far fa-circle' : ''}`}></i></div>
+                        <div className="col d-flex justify-content-center square border-end-0" onClick={(e) => handleClick("8")}><i className={`${squareValues[8] === 'X' ? 'fas fa-times' : squareValues[8] === '0' ? 'far fa-circle' : ''}`}></i></div>
+                    </div>
+                    <div className="row">
+                        <div className="col d-flex justify-content-center mt-2">
+                            <button onClick={() => { resetButton() }}>Reset</button>
+                        </div>
                     </div>
                 </div>
             </div>
